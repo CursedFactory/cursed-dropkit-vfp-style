@@ -48,6 +48,27 @@ After I choose, do all setup steps end-to-end:
 
 If I choose custom path, use that path exactly.
 If package source is not published npm, ask whether to use `file:`, `git+https`, or `github:` source string.
+
+Embedded OpenCode reference snippets (use directly, no web fetch needed):
+
+OpenCode config locations:
+- Global: ~/.config/opencode/opencode.json
+- Project: <repo>/opencode.json
+- Custom dir: OPENCODE_CONFIG_DIR=/path/to/config-dir
+
+Plugin files auto-load from:
+- ~/.config/opencode/plugins/
+- .opencode/plugins/
+
+Example plugin config snippet:
+{
+  "$schema": "https://opencode.ai/config.json",
+  "plugin": ["@cursed-factory/dropkit-vfp-style"]
+}
+
+Agents are defined in markdown files under:
+- ~/.config/opencode/agents/
+- .opencode/agents/
 ```
 </details>
 
@@ -57,38 +78,3 @@ Relevant OpenCode docs:
 - https://opencode.ai/docs/config/
 - https://opencode.ai/docs/plugins/
 - https://opencode.ai/docs/agents/
-
-Reference snippets (embedded so agents do not need web fetch):
-
-```jsonc
-// OpenCode config locations:
-// - Global: ~/.config/opencode/opencode.json
-// - Project: <repo>/opencode.json
-// - Custom dir: OPENCODE_CONFIG_DIR=/path/to/config-dir
-```
-
-```text
-Plugin files auto-load from:
-- ~/.config/opencode/plugins/
-- .opencode/plugins/
-```
-
-```json
-{
-  "$schema": "https://opencode.ai/config.json",
-  "plugin": ["@cursed-factory/dropkit-vfp-style"]
-}
-```
-
-```markdown
----
-description: Refactor existing source files to enforce coding style
-mode: subagent
----
-```
-
-```text
-Agents are defined in markdown files under:
-- ~/.config/opencode/agents/
-- .opencode/agents/
-```
