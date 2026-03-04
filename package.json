@@ -1,0 +1,49 @@
+{
+  "name": "@cursed-factory/dropkit-vfp-style",
+  "version": "0.1.0",
+  "description": "Dropkit package for VFP coding style enforcement and refactor execution.",
+  "license": "MIT",
+  "type": "module",
+  "sideEffects": false,
+  "main": "./index.ts",
+  "module": "./index.ts",
+  "types": "./index.ts",
+  "exports": {
+    ".": "./index.ts",
+    "./plugin": "./plugin.ts"
+  },
+  "files": [
+    "index.ts",
+    "plugin.ts",
+    "files",
+    "scripts",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "bun scripts/build.sh.ts",
+    "check": "bun scripts/check.sh.ts",
+    "test": "bun scripts/test.sh.ts",
+    "ci": "bun scripts/ci.sh.ts",
+    "version:set": "bun scripts/version.sh.ts",
+    "publish:npm:dry-run": "bun scripts/npm_publish_dry_run.sh.ts"
+  },
+  "keywords": [
+    "opencode",
+    "dropkit",
+    "style",
+    "refactor",
+    "vfp",
+    "agent",
+    "skill"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "peerDependencies": {
+    "@opencode-ai/plugin": "*"
+  },
+  "dependencies": {
+    "cursed-dropkit": "github:CursedFactory/cursed-dropkit"
+  }
+}
